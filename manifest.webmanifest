@@ -1,0 +1,17 @@
+{
+  "id": "/team",
+  "name": "تیم ترجمه تو مانگا",
+  "short_name": "تو مانگا",
+  "description": "مدیریت ترجمه، کلین و تایپ تیم تو مانگا",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/team",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0014",
+  "theme_color": "#6d28d9",
+  "icons": [
+    {"src":"/assets/icons/two-manga-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"/assets/icons/two-manga-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

@@ -1,0 +1,11 @@
+.git
+.env
+data
+backups
+release
+tests
+node_modules
+*.zip
+*.sqlite*
+
+php/config.local.php

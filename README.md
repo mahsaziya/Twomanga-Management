@@ -1,2 +1,7 @@
-# Twomanga-Management
-Team Management and Translation Affairs Department
+# تیم ترجمه — نسخه PHP
+
+نسخه اجرایی به PHP + SQLite منتقل شده است. بارگذاری هاست با FTP/FTPS و دامنه مستقل فایل انجام می‌شود.
+
+راهنمای نصب، مسیر فایل‌ها، انتقال داده و تنظیم FTP: [PHP-DEPLOY.md](PHP-DEPLOY.md).
+
+روی ویندوز start.bat را اجرا کنید. برای انتشار از بسته release/two-team-php.zip استفاده کنید. داده‌های واقعی و رمزهای اتصال داخل بسته نیستند.

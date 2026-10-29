@@ -1,0 +1,5 @@
+PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000;
+    CREATE TABLE IF NOT EXISTS chapter_watch_config(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS chapter_watch_sources(series_id INTEGER NOT NULL REFERENCES series(id) ON DELETE CASCADE,url TEXT NOT NULL,title TEXT NOT NULL,PRIMARY KEY(series_id,url));
+    CREATE TABLE IF NOT EXISTS chapter_watch_events(id INTEGER PRIMARY KEY,series_id INTEGER NOT NULL REFERENCES series(id) ON DELETE CASCADE,chapter_id INTEGER NOT NULL REFERENCES chapters(id) ON DELETE CASCADE,number TEXT NOT NULL,source_url TEXT NOT NULL,chapter_url TEXT,observed_at TEXT NOT NULL,notified_at TEXT,recipient TEXT,message_id TEXT,UNIQUE(series_id,number));
+    CREATE TABLE IF NOT EXISTS chapter_watch_runs(id INTEGER PRIMARY KEY,checked_at TEXT NOT NULL,report_json TEXT NOT NULL);

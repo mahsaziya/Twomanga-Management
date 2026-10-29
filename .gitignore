@@ -1,0 +1,10 @@
+data/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+backups/
+release/
+node_modules/
+
+php/config.local.php

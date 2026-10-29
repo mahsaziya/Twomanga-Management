@@ -1,0 +1,6 @@
+SELECT c.id,c.series_id seriesId,c.number,c.is_ongo isOngoing,s.title seriesTitle,st.stage,st.status,st.uploaded_at uploadedAt,a.user_id userId,u.full_name fullName,u.role,a.assignment_type assignmentType,a.fee_cents feeCents,a.due_at dueAt,
+        (SELECT up.id FROM uploads up WHERE up.assignment_id=a.id ORDER BY up.id DESC LIMIT 1) latestUploadId,
+        (SELECT up.file_name FROM uploads up WHERE up.assignment_id=a.id ORDER BY up.id DESC LIMIT 1) latestFileName,
+        (SELECT r.status FROM reviews r JOIN uploads up ON up.id=r.upload_id WHERE up.assignment_id=a.id ORDER BY r.id DESC LIMIT 1) reviewStatus,
+        (SELECT r.note FROM reviews r JOIN uploads up ON up.id=r.upload_id WHERE up.assignment_id=a.id ORDER BY r.id DESC LIMIT 1) reviewNote
+        FROM chapters c JOIN series s ON s.id=c.series_id JOIN stages st ON st.chapter_id=c.id LEFT JOIN assignments a ON a.chapter_id=c.id AND a.stage=st.stage AND a.active=1 LEFT JOIN users u ON u.id=a.user_id ORDER BY s.title,CAST(c.number AS REAL),st.stage
